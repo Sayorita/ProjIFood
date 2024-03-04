@@ -1,10 +1,14 @@
 <?php
 session_start();
+include_once("../dao/manipuladados.php");
 
     $nome = $_POST['txtUser'];
     $senha = $_POST['txtPassword'];
 
-    if($nome=="Tazmania" && $senha=="abluble"){
+    $dadoslogin = new ManipulaDados();
+    $dadoslogin->setTable('tb_usuario');
+
+    if($dadoslogin->validarLogin($nome, $senha)!=0){
         //muestra la pantalla principal
         header("location: principal.php");
         $_SESSION['usuario'] = $nome;
