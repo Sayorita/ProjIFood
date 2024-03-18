@@ -9,7 +9,7 @@ function converte($String) {
 $restaurante = new Restaurante();
 $inserir = new ManipulaDados();
 
-$restaurante->setNome($_POST['txtRestaurante']);
+$restaurante->setName($_POST['txtRestaurante']);
 $restaurante->setDescricao($_POST['txtDescricao']);
 $restaurante-> setCategoria($_POST['txtCategoria']);
 
@@ -24,4 +24,7 @@ $inserir->setTable("tb_restaurantes");
 $inserir->setFields("nome,descricao,categoria,url");
 $inserir->setDados("'{$restaurante->getName()}', '{$restaurante->getDescricao()}', '{$restaurante->getCategoria()}','{$restaurante->getUrl()}'");
 $inserir->insert();
+
+echo "<script> alert ('Restaurante cadastrado com sucesso') </script>";
+echo "<script>location='../../admin/principal.php?secao=cadrestaurante'</script>";
 ?>
