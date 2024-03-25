@@ -8,7 +8,6 @@ $lista = $dados->getAllDataTable();
 ?>
 
 <section>
-<form method="post" action="controller/manteRestaurante.php">
 <table>
         <tr>
             <th>ID</th>
@@ -23,6 +22,7 @@ $lista = $dados->getAllDataTable();
 <?php
    foreach ($lista as $restaurante) {
     ?>
+    <form method="post" action="controller/manteRestaurante.php">
         <tr>
             <td><?= $restaurante["id"] ?></td>
             <td><?= $restaurante["nome"] ?></td>
@@ -38,9 +38,9 @@ $lista = $dados->getAllDataTable();
             <td><button type="submit" name="botao" value="editar">imagme pra editar</td>
             <td><button type="submit" name="botao" value="excluir">imagem pra excluir</td>
         </tr> 
+        </form>
      <?php
    }
    ?>
 </table>
-</form>
 </section>

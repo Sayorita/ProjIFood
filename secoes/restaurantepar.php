@@ -11,10 +11,14 @@ $lista = $dados->getAllDataTable();
 <?php
    foreach ($lista as $restaurante) {
     ?>
-     <h3> <?=$restaurante["id"]?> </h3>
-     <h3> <?=$restaurante["nome"]?> </h3>
-     <h3> <?=$restaurante["descricao"]?> </h3>
-     <img src="<?=$restaurante["url"]?>">
+    <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="<?=$restaurante["url"]?>" alt="Imagem do restaurante">
+    <div class="card-body">
+    <h5 class="card-title"><?=$restaurante["nome"]?></h5>
+    <p class="card-text"><?=$restaurante["descricao"]?></p>
+    <a href="#" class="btn btn-primary">Acessar</a>
+   </div>
+   </div>
      <?php
    }
    ?>
