@@ -8,7 +8,7 @@ $lista = $dados->getAllDataTable();
 ?>
 
 <section>
-<form method="post" action="controller/manterestaurante.php">
+<form method="post" action="controller/manteRestaurante.php">
 <table>
         <tr>
             <th>ID</th>

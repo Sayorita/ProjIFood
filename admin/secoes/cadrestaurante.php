@@ -1,4 +1,4 @@
-<form method="post" action="controller/inserirrestaurante.php" enctype="multipart/form-data"> <!-- mandar arquivos grandes transformados em bytes que serão convertidos posteriormente -->
+<form method="post" action="controller/inseriRestaurante.php" enctype="multipart/form-data"> <!-- mandar arquivos grandes transformados em bytes que serão convertidos posteriormente -->
 <p>
     <label> nome: </label>
     <input type="text" name="txtRestaurante" require/>
