@@ -2,7 +2,7 @@
 include_once ("conexao.php");
 class ManipulaDados extends Conexao
 {
-    private $table, $fields, $dados;
+    private $table, $fields, $dados,$fieldPk,$valuePk;
 
     public function getTable()
     {
@@ -32,6 +32,22 @@ class ManipulaDados extends Conexao
     {
         $this->dados = $d;
     }
+    public function getFieldPk()
+    {  
+        return $this->fieldPk;
+    }
+    public function setFieldPk($fieldPk)
+    {
+        $this->fieldPk = $fieldPk;
+    }
+    public function getValuePk()
+    {
+        return $this->valuePk;
+    }
+    public function setValuePk($valuePk)
+    {
+        $this->valuePk = $valuePk;
+    }
 
     public function getAllDataTable()
     {
@@ -60,6 +76,25 @@ class ManipulaDados extends Conexao
             $this->status = "Cadastrado com sucesso";
         } else {
             $this->status = "Erro ao cadastrar" . mysqli_error($this->connect());
+        }
+    }
+    public function update()
+    {
+        $this->sql = "UPDATE $this->table SET $this->fields WHERE $this->fieldPk = '$this->valuePk'";
+        if (self::execSQL($this->sql)) {
+            $this->status = "Alterado com sucesso";
+        } else {
+            $this->status = "Erro ao alterar" . $this->table ." ". mysqli_error($this->connect());
+        }
+    }
+
+    public function delete()
+    {
+        $this->sql = "DELETE FROM $this->table WHERE $this->fieldPk = '$this->valuePk'";
+        if (self::execSQL($this->sql)) {
+            $this->status = "Deletado com sucesso";
+        } else {
+            $this->status = "Erro ao deletar" . mysqli_error($this->connect());
         }
     }
 

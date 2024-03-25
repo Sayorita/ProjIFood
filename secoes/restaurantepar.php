@@ -14,6 +14,7 @@ $lista = $dados->getAllDataTable();
      <h3> <?=$restaurante["id"]?> </h3>
      <h3> <?=$restaurante["nome"]?> </h3>
      <h3> <?=$restaurante["descricao"]?> </h3>
+     <img src="<?=$restaurante["url"]?>">
      <?php
    }
    ?>
