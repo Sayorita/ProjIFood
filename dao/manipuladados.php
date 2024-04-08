@@ -49,6 +49,27 @@ class ManipulaDados extends Conexao
         $this->valuePk = $valuePk;
     }
 
+    public function getNameById($id)
+    {
+        $this->sql = "SELECT * FROM $this->table WHERE id='$id'";
+        $this->qr = self::execSQL($this->sql);
+
+        $row = self::listQr($this->qr);
+          
+        return $row['nome'];
+    }
+    public function getComidaByRestaurante($id)
+    {
+        $this->sql = "SELECT * FROM $this->table WHERE id_restaurante='$id'";
+        $this->qr = self::execSQL($this->sql);
+
+        $dados = array();
+
+        while ($row = self::listQr($this->qr)) {
+            array_push($dados, $row);
+        }
+        return $dados;
+    }
     public function getAllDataTable()
     {
         $this->sql = "SELECT * FROM $this->table";

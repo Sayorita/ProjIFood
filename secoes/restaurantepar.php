@@ -26,7 +26,9 @@ $lista = $dados->getAllDataTable();
             <div class="card-body">
               <h5 class="card-title"><?= $restaurante["nome"] ?></h5>
               <p class="card-text"><?= $restaurante["descricao"] ?></p>
-              <a href="#" class="btn btn-primary">Acessar</a>
+              <form action="restauranteComida.php" method="GET">
+              <a href="?secao=restauranteComida?id=<?= $restaurante["id"]?>" class="btn btn-primary">Ver cardápio</a>
+              </form>
             </div>
           </div>
         </div> <!-- col-md-4-->

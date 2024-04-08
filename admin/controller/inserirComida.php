@@ -8,15 +8,19 @@ function converte($String) {
 
 $comida = new Comida();
 $inserir = new ManipulaDados();
+$restaurante = new ManipulaDados();
+$restaurante->setTable("tb_restaurantes");
 
 $comida->setNome($_POST['txtPrato']);
 $comida->setIngredientes($_POST['txtIng']);
 $comida-> setPreco($_POST['txtPreco']);
+$comida->setIdRestaurante($_POST['cbxRest']);
+$nome_restaurante = $restaurante->getNameById($comida->getIdRestaurante());
 
 
 $inserir->setTable("tb_comida");
-$inserir->setFields("nome,ingredientes,preco");
-$inserir->setDados("'{$comida->getNome()}', '{$comida->getIngredientes()}', '{$comida->getPreco()}','{$comida->getNomeRestaurante()}'");
+$inserir->setFields("nome,ingredientes,preco,id_restaurante,nome_restaurante");
+$inserir->setDados("'{$comida->getNome()}', '{$comida->getIngredientes()}', '{$comida->getPreco()}','{$comida->getIdRestaurante()}','$nome_restaurante'");
 $inserir->insert();
 
 echo "<script> alert ('Comida cadastrada com sucesso') </script>";
