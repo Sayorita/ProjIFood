@@ -1,20 +1,10 @@
-<?php
+<form method="post" action="relatar.php">
+<a href="secoes/relatar.php" class="btn btn-primary">Gerar Relatório PDF</a>
+</form>
 
-include_once("../dao/manipuladados.php");
 
-$dados = new ManipulaDados();
-$dados->setTable("tb_usuario");
-$lista = $dados->getAllDataTable();
-?>
 
-<section>
-<?php
-   foreach ($lista as $usuario) {
-    ?>
-     <h1> <?=$usuario["email"]?> </h1>
-    
-     <?php
-   }
-   ?>
 
-</section>
+
+
+

@@ -17,7 +17,6 @@ include_once ("validarcookie.php");
     <?php include_once ("includes/cabecalho.php"); ?>
     <?php include_once ("includes/menu.php"); ?>
     <main>
-
         <?php
         include_once ("controller/verurl.php");
         $redirecionar = new VerUrl();

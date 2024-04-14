@@ -1,9 +1,10 @@
 <?php
+
 class VerUrl{
     function trocarUrl($url){
         if(empty($url)){
             $url = "secoes/home.php";
-        } else {
+        } else{
             $url = "secoes/$url.php";
         }
         include_once($url);
