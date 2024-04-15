@@ -14,7 +14,7 @@ $lista = $dados->getAllDataTable();
     <div class="row">
       <?php
       $count = 0;
-      foreach ($lista as $comidda) {
+      foreach ($lista as $comida) {
         // Abre uma nova linha a cada 3 cards
         if ($count % 3 == 0) {
           echo '</div><div class="row">';
@@ -25,9 +25,7 @@ $lista = $dados->getAllDataTable();
             <div class="card-body">
               <h5 class="card-title"><?= $comida["nome"] ?></h5>
               <p class="card-text"><?= $comida["ingredientes"] ?></p>
-              <form action="restauranteComida.php" method="GET">
-              <a href="?secao=restauranteComida?id=<?= $comida["id"]?>" class="btn btn-primary">Detalhes</a>
-              </form>
+              <a href="#" class="btn btn-primary">Detalhes</a>
             </div>
           </div>
         </div> <!-- col-md-4-->

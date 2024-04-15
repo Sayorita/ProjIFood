@@ -6,7 +6,7 @@
     $manter->setFieldPk("id");
 
     $id = $_POST['txtId'];
-    $nome = $_POST['txPrato'];
+    $nome = $_POST['txtPrato'];
     $ingredientes = $_POST['txtIng'];
     $preco = $_POST['txtPreco'];
     $restaurante = $_POST['cbxRest'];
